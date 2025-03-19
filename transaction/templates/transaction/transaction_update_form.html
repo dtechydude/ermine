@@ -1,0 +1,27 @@
+{% extends 'pages/dashboard.html' %}
+{% load crispy_forms_tags %}
+
+{% block contentbody %}
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Merchant</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Update Transaction</a></li>
+            </ol>
+        </div>
+<div class="col-lg-8 order-lg-1">
+<h4 class="mb-3">Update Transaction</h4>
+<form method="POST">
+<div class="row">
+    <div class="mb-3">
+        <!-- <form method="POST" enctype="multipart/form-data" class="needs-validation"> -->
+            {% csrf_token %}
+             {{ form |crispy }}
+    
+    </div>  											                                      
+
+<button class="btn btn-primary btn-lg btn-block" type="submit">Update Transaction</button>
+</form>
+{% endblock contentbody %}
